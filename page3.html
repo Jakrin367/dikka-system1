@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้า 3: กำหนดผู้ตรวจ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>ระบบคุมฎีกาและค้นหาผู้ตรวจอัตโนมัติ</h1>
+
+  <div class="nav-menu">
+    <a href="index.html" class="nav-btn">หน้า 1: รับข้อมูล (กรอกฎีกา)</a>
+    <a href="page2.html" class="nav-btn">หน้า 2: คุมฎีกา & ค้นหา</a>
+    <a href="page3.html" class="nav-btn active">หน้า 3: กำหนดผู้ตรวจ</a>
+  </div>
+
+  <div class="card">
+    <h2>ตารางกำหนดผู้ตรวจประจำแผนงาน/กอง</h2>
+    <table id="inspectorTable">
+      <thead>
+        <tr>
+          <th style="width: 15%;">สำนัก/กอง</th>
+          <th style="width: 60%;">แผนงาน / งาน / รายการที่รับผิดชอบ</th>
+          <th style="width: 25%;">ชื่อผู้ตรวจฎีกา</th>
+        </tr>
+      </thead>
+      <tbody id="inspectorBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
