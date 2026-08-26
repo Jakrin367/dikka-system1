@@ -26,16 +26,58 @@
       <thead>
         <tr>
           <th>เลขฎีกา</th>
-          <th>วันที่</th>
+          <th>วันที่รับ</th>
+          <th>เวลาที่รับเข้า</th>
           <th>กอง/สังกัด</th>
           <th>ผู้รับเงิน</th>
           <th>ผู้ตรวจฎีกา</th>
-          <th>สถานะ / การทำงาน</th>
-          <th>เวลาที่ส่ง</th>
+          <th>สถานะ / การส่ง</th>
+          <th>วัน/เดือน/เวลา ที่ส่งผู้ตรวจ</th>
+          <th>การจัดการ</th>
         </tr>
       </thead>
       <tbody id="dikkaBody"></tbody>
     </table>
+  </div>
+</div>
+
+<!-- Modal แก้ไขข้อมูล -->
+<div id="editModal" class="modal">
+  <div class="modal-content card">
+    <h2>แก้ไขข้อมูลฎีกา</h2>
+    <form id="editForm" onsubmit="saveEdit(event)">
+      <input type="hidden" id="editIndex">
+      <div class="form-group">
+        <label for="editDikkaNo">เลขฎีกา</label>
+        <input type="text" id="editDikkaNo" required>
+      </div>
+      <div class="form-group">
+        <label for="editDikkaDate">วันที่</label>
+        <input type="date" id="editDikkaDate" required>
+      </div>
+      <div class="form-group">
+        <label for="editDeptSelect">แผนงาน / งาน / สังกัดกอง</label>
+        <select id="editDeptSelect" onchange="autoMatchEditInspector()" required>
+          <option value="">-- เลือกแผนงาน / กอง --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="editPayee">ผู้รับเงิน</label>
+        <input type="text" id="editPayee" required>
+      </div>
+      <div class="form-group">
+        <label for="editInspector">ผู้ตรวจฎีกา (ระบบดึงให้อัตโนมัติ)</label>
+        <input type="text" id="editInspector" class="auto-filled" readonly required>
+      </div>
+      <div class="form-group">
+        <label for="editAmount">จำนวนเงิน (บาท)</label>
+        <input type="number" id="editAmount" step="0.01" required>
+      </div>
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 15px;">
+        <button type="button" class="btn" style="background: #94a3b8; color: white;" onclick="closeModal()">ยกเลิก</button>
+        <button type="submit" class="btn btn-primary">บันทึกการแก้ไข</button>
+      </div>
+    </form>
   </div>
 </div>
 
