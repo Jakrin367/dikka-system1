@@ -25,7 +25,7 @@
         <input type="text" id="dikkaNo" required placeholder="เช่น 05626">
       </div>
       <div class="form-group">
-        <label for="dikkaDate">วันที่</label>
+        <label for="dikkaDate">วันที่รับ</label>
         <input type="date" id="dikkaDate" required>
       </div>
       <div class="form-group">
@@ -42,10 +42,21 @@
         <label for="itemDetail">รายการ</label>
         <input type="text" id="itemDetail" placeholder="ระบุรายการ..." required>
       </div>
+
+      <!-- ตัวเลือกผู้รับเงิน -->
       <div class="form-group">
-        <label for="payee">ผู้รับเงิน</label>
-        <input type="text" id="payee" placeholder="เช่น บริษัท C" required>
+        <label>ผู้รับเงิน</label>
+        <div style="display: flex; gap: 20px; margin-bottom: 8px;">
+          <label style="font-weight: normal; cursor: pointer;">
+            <input type="radio" name="payeeType" value="ktb" onchange="togglePayeeInput()"> KTB corporate
+          </label>
+          <label style="font-weight: normal; cursor: pointer;">
+            <input type="radio" name="payeeType" value="custom" checked onchange="togglePayeeInput()"> กรอกเอง
+          </label>
+        </div>
+        <input type="text" id="payee" placeholder="ระบุชื่อผู้รับเงิน เช่น บริษัท C" required>
       </div>
+
       <div class="form-group">
         <label for="amount">จำนวนเงิน (บาท)</label>
         <input type="number" id="amount" step="0.01" required>
