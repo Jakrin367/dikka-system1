@@ -29,10 +29,18 @@
         <input type="date" id="dikkaDate" required>
       </div>
       <div class="form-group">
-        <label for="deptSelect">แผนงาน / งาน / สังกัดกอง</label>
-        <select id="deptSelect" onchange="autoMatchInspector()" required>
-          <option value="">-- กำลังโหลดรายการ... --</option>
-        </select>
+        <!-- Dropdown สำนัก/กอง (เพิ่มใหม่) -->
+<label for="mainDeptSelect">สำนัก / กอง</label>
+<select id="mainDeptSelect" onchange="onMainDeptChange()">
+  <option value="">-- เลือกสำนัก/กอง --</option>
+</select>
+
+<!-- Dropdown แผนงาน/งาน/รายการ (เดิม) -->
+<label for="deptSelect">แผนงาน / งาน / สังกัดกอง</label>
+<select id="deptSelect" onchange="autoMatchInspector()">
+  <option value="">-- เลือกแผนงาน / งาน / รายการ --</option>
+</select>
+
       </div>
       <div class="form-group">
         <label for="inspectorInput">ผู้ตรวจ (ระบบดึงให้อัตโนมัติ)</label>
